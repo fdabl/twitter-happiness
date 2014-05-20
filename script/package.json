@@ -1,0 +1,11 @@
+{
+  "name": "geolocate-happiness-tweets",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Fabian Dablander",
+  "license": "MIT",
+  "devDependencies": {
+    "ntwitter": "^0.5.0"
+  }
+}
