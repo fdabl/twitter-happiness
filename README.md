@@ -12,9 +12,11 @@ to quantify the happiness of geotagged tweets.
 
 Rather then analysing tweets retrospectively, I stream tweets in realtime and
 compute their happiness index on the fly (it's a pretty straightforward algorithm, so no problems their).
-It analyzes tweets around New York City be default, but can be changed if you provide the necessary
+It analyzes tweets around New York City by default, but can be changed if you provide the necessary
 arguments, more info <a href="https://dev.twitter.com/docs/streaming-apis/parameters" target="_blank">here</a>.
 
+
+In the script directory, run
 ```
 node index.js # analyzes tweets in nyc
 node index.js -122.75,36.8,-121.75,37.8 # analyzes tweets in san francisco
@@ -31,8 +33,8 @@ Hedonometrics and Twitter. PLoS ONE 6: e26752.
 
 In the graph folder, graph.R plots the frequency distribution of those words.
 
-transform.R and tojson.js transform the original ratings.txt to subset.json in the script/data folder,
-which is the format that can be used by the node script.
+transform.R and tojson.js transform the original ratings.txt first to subset.txt and then to words.json
+in the script/data folder.
 
 ## License
 
