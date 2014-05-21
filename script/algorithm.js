@@ -25,14 +25,28 @@ var strip = function(words) {
   });
 };
 
+
 module.exports = function(tweet) {
   var words = strip(tweet);
 
-  return words.reduce(function(index, word) {
-    var rating = ratings[word] || 0
-      , freq = count(word, words) / words.length;
+  var dict = words.reduce(function(base, word) {
+      var rating = ratings[word];
+      if (rating < 4 || rating > 6) {
+        base[word] = rating;
+      }
+      return base;
+    }, {});
 
-    index += rating * freq;
+  var keys = Object.keys(dict)
+    , len  = keys.length;
+
+  var index = keys.reduce(function(index, key) {
+    var rating = dict[key]
+      , relfreq = count(key, keys) / len;
+
+    index += rating * relfreq;
     return index;
   }, 0);
+
+  return index || NaN;
 };

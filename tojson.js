@@ -1,6 +1,6 @@
 /***********************************************************
  * Transforms the file that transform.R outputs (subset.txt)
- * into a JSON file in app/data/subset.json.
+ * into a JSON file in script/data/words.json.
  **********************************************************/
 var fs = require('fs');
 
